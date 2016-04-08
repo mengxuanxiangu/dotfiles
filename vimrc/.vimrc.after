@@ -1,0 +1,9 @@
+map <C-j> <nop>
+map <C-k> <nop>
+set encoding=gb2312
+set fileencodings=gb2312
+let g:syntastic_check_on_wq = 0
+colorscheme molokai
+"change word to uppercase
+inoremap <C-u> <esc>gUiwea
+set undodir^=~/.vim/_undo//        " where to put undo file

@@ -1,0 +1,32 @@
+let mapleader = ","
+set wrap
+set mouse=""
+set encoding=gb2312
+set fileencodings=gb2312
+set t_Co=256
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set colorcolumn=100
+"UPPERCASE and lowercase conversion
+nnoremap g^ gUiW
+nnoremap gv guiW
+"go to first and last char of line
+nnoremap H ^
+nnoremap L g_
+vnoremap H ^
+vnoremap L g_
+"myself key
+map <C-j> <nop>
+map <C-k> <nop>
+"change word to uppercase
+inoremap <C-u> <esc>gUiwea
+
+syntax enable
+set bg=dark
+"colorscheme solarized
+set tags+=./../tags,./../../tags,./../../../tags,./../../../../tags
+:hi CursorColumn ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
+
+let g:syntastic_check_on_wq = 0
+"call janus#disable_plugin('syntastic')
