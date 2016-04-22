@@ -1,5 +1,8 @@
 map <C-j> <nop>
 map <C-k> <nop>
+nmap gj <PageDown>
+nmap gk <PageUp>
+nmap fd :Ack 
 set encoding=gb2312
 set fileencodings=gb2312
 let g:syntastic_check_on_wq = 0
