@@ -3,7 +3,6 @@ autoload colors
 colors
 #. /home/ssd/setup/z/z.sh
 source /home/op/opbin/optool/conf/optool.conf
-eval $(thefuck --alias)
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
 eval _$color='%{$terminfo[bold]$fg[${(L)color}]%}'
 eval $color='%{$fg[${(L)color}]%}'
@@ -13,7 +12,7 @@ FINISH="%{$terminfo[sgr0]%}"
 #}}}
 #命令提示符
 RPROMPT=$(echo "$RED%D %T$FINISH")
-PROMPT=$(echo "[$CYAN%n@$YELLOW%m.dbl01 $RED%C]\$$_YELLOW>$FINISH ")
+PROMPT=$(echo "[$CYAN%n@$YELLOW%m.sh01 $RED%C]\$$_YELLOW>$FINISH ")
  
 #PROMPT=$(echo "$BLUE%M$GREEN%/
 #$CYAN%n@$BLUE%M:$GREEN%/$_YELLOW>>>$FINISH ")
@@ -232,7 +231,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias ls='ls -F --color=auto'
-alias ll='ls -al'
+alias ll='ls -al -tr'
 alias grep='grep --color=auto'
 alias la='ls -a'
 alias pacman='sudo pacman-color'
@@ -358,6 +357,7 @@ ARTISTIC_STYLE_OPTIONS=~/.astylerc
 alias astyle="astyle --style=attach --convert-tabs --indent=spaces=4 --add-brackets \
     --pad-header --unpad-paren --pad-oper --max-code-length=100 --formatted --align-pointer=type \
     --align-reference=type --break-blocks -Y"
+alias push="git push origin HEAD:refs/for/master"
 export PYTHONIOENCODING=utf-8
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export TMOUT=0
@@ -372,6 +372,23 @@ PATH=/home/work/pre-submit/usr/bin:$PATH
 export PATH
 PATH=/home/work/scmtools/usr/bin:$PATH
 export PATH
+export GOPATH=/home/work/mygo
+export GOROOT=/home/work/goroot/go
 
 PATH=/home/work/default_coverity/coverity_tools/client_bin/:/home/work/default_coverity/coverity_tools/cov-analysis-linux64/bin/:$PATH
+export PATH
+PATH=$GOROOT/bin:$PATH
+export PATH
+###############Please don't modify this section, or errors will occur!###############
+PATH=/home/work/.BCloud/bin:$PATH
+export PATH
+PATH=/home/ssd/module/autobuild/usr/bin:$PATH
+export PATH
+export PSSTYLE_UPDATE_DATE=09/14/15
+### BEGIN-PSSTYLE-PATH please don't manualy change this format!! Or it will cause failure!
+export PSSTYLE_HOME=/home/work/psstyle
+export PATH=$PSSTYLE_HOME:$PATH
+export LD_LIBRARY_PATH=$PSSTYLE_HOME/lib/:$LD_LIBRARY_PATH
+### END-PSSTYLE-PATH #################
+PATH=/home/work/scmtools/usr/bin:$PATH
 export PATH
