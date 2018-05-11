@@ -1,0 +1,2 @@
+# dotfiles
+cd ~/dotfiles && stow .
